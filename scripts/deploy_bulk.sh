@@ -1,3 +1,5 @@
+# This script can bulk create vm's in proxmox, there needs to be a cloudimg template already with the name containing "template"
+
 #!/bin/bash
 
 # Function to list available templates
