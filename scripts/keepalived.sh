@@ -4,8 +4,10 @@
 sudo apt-get update
 sudo apt-get install -y keepalived
 
-# Backup the original keepalived configuration file
-sudo cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.bak
+# Backup the original keepalived configuration file if it exists
+if [ -f /etc/keepalived/keepalived.conf ]; then
+    sudo cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.bak
+fi
 
 # Create a new keepalived configuration
 sudo bash -c 'cat > /etc/keepalived/keepalived.conf <<EOF
